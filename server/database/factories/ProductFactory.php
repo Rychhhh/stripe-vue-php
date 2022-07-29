@@ -25,12 +25,14 @@ class ProductFactory extends Factory
 
         $name = $faker->company . ' ' . Arr::random($contentArr);
         $slug = Str::slug($name);
+        $image = $faker->imageUrl(800,600);
         $description = $faker->realText();
         $price = $faker->numberBetween(10000, 100000);
 
         return [
             'name' => $name,
             'slug' => $slug,
+            'image' => $image,
             'description' => $description,
             'price' => $price // Rp. 10.000 - Rp 100.000
         ];
