@@ -14,4 +14,10 @@ class ProductController extends Controller
     {
         return Product::with('kategori:id,name')->get();
     }
+
+    public function show(Product $product) {
+        $product->load('kategori:id,name');
+
+        return $product;
+    }
 }
